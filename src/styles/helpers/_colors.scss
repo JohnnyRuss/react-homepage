@@ -1,0 +1,16 @@
+$colors: (
+  green_shade: #2f372d,
+  green_tint: #606c5d,
+  green_tr_85: rgba(47, 55, 45, 0.85),
+  green_tr_03: rgba(217, 217, 217, 0.03),
+  green_tr_20: rgba(217, 217, 217, 0.2),
+  black_tr_80: rgba(0, 0, 0, 0.8),
+  black_tr_25: rgba(0, 0, 0, 0.25),
+  white: #fff4f4,
+  brown_tint: #f7e6c4,
+  brown_shade: #f1c376,
+);
+
+@function color($color) {
+  @return map-get($colors, $color);
+}

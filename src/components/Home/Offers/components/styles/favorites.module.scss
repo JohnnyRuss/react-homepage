@@ -1,0 +1,156 @@
+@use "../../../../../styles/helpers/variables" as *;
+
+.favorites {
+  grid-column: 7/11;
+  grid-row: 3;
+  height: 100%;
+  max-height: 34.5rem;
+  width: 100%;
+  aspect-ratio: 12/8;
+  padding: 2.5rem 1.5rem;
+  background: color(brown_tint);
+  position: relative;
+
+  .favorites__header {
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: color(green_tint);
+    padding: 0.5rem;
+    border-radius: 5rem;
+
+    &-title {
+      padding-left: 2.5rem;
+      color: color(brown_tint);
+      font-size: size(lg);
+    }
+
+    &-switcher--box {
+      background: color(brown_tint);
+      display: flex;
+      gap: 0.25rem;
+      border-radius: 5rem;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        width: calc(50% + 1.75rem);
+        border-radius: inherit;
+        border: 2px solid color(green_shade);
+        background: color(brown_shade);
+        transition: all 0.2s ease-in;
+      }
+
+      &.week::after {
+        left: 0;
+      }
+
+      &.month::after {
+        // left: calc(50% - 1.75rem);
+        left: 50%;
+        width: 50%;
+      }
+
+      & button {
+        border-radius: 5rem;
+        padding: 1.5rem 2.5rem;
+
+        &:last-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .favorites__content-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    padding: 11rem 10.5rem 2.5rem 10.5rem;
+
+    .favorites__content {
+      width: 100%;
+      height: 100%;
+      background: color(green_tint);
+      border-radius: 5rem;
+      overflow: hidden;
+      padding: 3.2rem;
+    }
+
+    .favorites__content figure {
+      width: 100%;
+      height: 100%;
+      border-radius: 2rem;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      span {
+        position: absolute;
+        z-index: 2;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: color(brown_shade);
+        font-size: size(xxl);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        backdrop-filter: blur(1px);
+      }
+    }
+  }
+
+  // 480px width device
+  @media (max-width: 30em) {
+    grid-column: 1/12;
+    grid-row: 6;
+    width: 100%;
+
+    .favorites__header {
+      &-title {
+        font-size: size(base);
+      }
+
+      &-switcher--box {
+        font-size: size(sm);
+
+        & button {
+          padding: 1.2rem 2rem;
+        }
+      }
+    }
+
+    .favorites__content-box {
+      padding: 9rem 8rem 2.5rem 8rem;
+
+      .favorites__content {
+        padding: 1.2rem;
+        border-radius: 2rem;
+      }
+
+      .favorites__content figure span {
+        font-size: size(lg);
+      }
+    }
+  }
+}

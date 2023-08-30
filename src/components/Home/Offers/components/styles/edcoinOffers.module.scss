@@ -1,0 +1,20 @@
+@use "../../../../../styles/helpers/variables" as *;
+@use "./globals.module.scss" as *;
+
+.ed__coin__offers {
+  @extend %offers__card;
+  grid-column: 4/6;
+  grid-row: 2;
+  aspect-ratio: 9/11;
+  align-items: center;
+  justify-self: self-end;
+
+  // 480px width device
+  @media (max-width: 30em) {
+    grid-row: 2/4;
+    grid-column: 9/12;
+    height: 100%;
+    align-items: center;
+    padding: 0;
+  }
+}

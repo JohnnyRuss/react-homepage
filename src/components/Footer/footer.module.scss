@@ -1,0 +1,19 @@
+@use "../../styles/helpers/variables" as *;
+
+.footer {
+  background: color(green_tr_03);
+
+  div {
+    width: min($container, 100%);
+    margin: 0 auto;
+    padding: 1.2rem 3rem;
+    color: color(white);
+    font-size: size(lg);
+  }
+
+  @media (max-width: 30em) {
+    div {
+      font-size: size(sm);
+    }
+  }
+}

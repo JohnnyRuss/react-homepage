@@ -1,0 +1,86 @@
+@use "../../../styles/helpers/variables" as *;
+
+.for-you__container {
+  width: min($container, 100%);
+  margin: 0 auto;
+  padding: 9rem 0;
+
+  .for-you {
+    position: relative;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 9;
+      left: -1.5rem;
+      right: -1.5rem;
+      height: 9rem;
+      border-radius: 100%;
+      background: color(green_shade);
+    }
+
+    &::before {
+      top: 0;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      bottom: 0;
+      transform: translateY(50%);
+    }
+  }
+
+  .for-you__swiper {
+    height: 100%;
+  }
+
+  .for-you__swiper-slide {
+    aspect-ratio: 1/1;
+
+    figure {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  .for-you__label {
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: color(brown_tint);
+    padding: 0.5rem 2.2rem;
+    font-size: size(xxl);
+  }
+
+  @media (max-width: 30em) {
+    padding: 4rem 1rem;
+
+    .for-you {
+      height: 14rem;
+
+      &::after,
+      &::before {
+        left: -1.5rem;
+        right: -1.5rem;
+        height: 2rem;
+        // display: none;
+      }
+    }
+
+    .for-you__label {
+      font-size: size(sm);
+      padding: 0.5rem 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use "../../../styles/helpers/variables" as *;
+
+.offers__container {
+  padding: 2.6rem 0;
+
+  &__inner {
+    width: min($container, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template: repeat(3, max-context) / repeat(11, 1fr);
+    gap: 2rem;
+
+    & > div {
+      border-radius: 5rem;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      background-position: center;
+      overflow: hidden;
+    }
+  }
+
+  // 480px width device
+  @media (max-width: 30em) {
+    padding: 2.6rem 1rem;
+
+    &__inner {
+      grid-template: repeat(6, max-context) / repeat(11, 1fr);
+      gap: 1.2rem;
+
+      & > div {
+        border-radius: 2rem;
+      }
+    }
+  }
+}

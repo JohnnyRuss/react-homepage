@@ -1,0 +1,22 @@
+@use "../../../../../styles/helpers/variables" as *;
+@use "./globals.module.scss" as *;
+
+.offers {
+  @extend %offers__card;
+  grid-column: 4/6;
+  grid-row: 1;
+  aspect-ratio: 9/14;
+  justify-self: self-end;
+  align-self: self-end;
+  align-items: flex-start;
+  padding-top: 3rem;
+
+  // 480px width device
+  @media (max-width: 30em) {
+    grid-row: 2/4;
+    grid-column: 6/9;
+    height: 100%;
+    align-items: center;
+    padding: 0;
+  }
+}

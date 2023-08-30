@@ -1,0 +1,20 @@
+.scroll-top__btn-box {
+  position: fixed;
+  bottom: 8rem;
+  right: 3.5rem;
+  z-index: 99;
+
+  button {
+    cursor: pointer;
+  }
+
+  @media (max-width: 30em) {
+    bottom: 6rem;
+    right: 1rem;
+
+    button svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

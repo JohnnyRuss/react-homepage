@@ -1,0 +1,32 @@
+@use "../../../../../styles/helpers/variables" as *;
+
+%offers__card {
+  width: 100%;
+  max-width: 23.5rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .label_btn {
+    background: color(green_shade);
+    color: color(brown_shade);
+    padding: 1.2rem 2rem;
+    border-radius: 5rem;
+    max-width: 75%;
+    text-align: center;
+    text-wrap: balance;
+    position: absolute;
+    cursor: pointer;
+    font-size: size(base);
+  }
+
+  // 480px width device
+  @media (max-width: 30em) {
+    .label_btn {
+      padding: 0.75rem 1.25rem;
+      text-align: center;
+      font-size: size(xs);
+      max-width: 95%;
+    }
+  }
+}

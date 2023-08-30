@@ -1,0 +1,14 @@
+$font-size: (
+  xs: 1.1rem,
+  sm: 1.4rem,
+  base: 1.6rem,
+  lg: 2rem,
+  xl: 2.4rem,
+  xxl: 3.2rem,
+  heading: 6.4rem,
+  heading_secondary: 3.6rem,
+);
+
+@function size($size) {
+  @return map-get($font-size, $size);
+}
